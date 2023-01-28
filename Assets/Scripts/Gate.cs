@@ -1,27 +1,43 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.TextCore.Text;
+using UnityEngine.UI;
+using TMPro;
+using System.Reflection.Emit;
 
 public class Gate : MonoBehaviour
 {
-    [SerializeField] private GameObject player;
-    // Start is called before the first frame update
-    void Start()
+    [SerializeField] private int[] addNumber = { 10, 20, 30, 50, 70 };
+    [SerializeField] private int[] multiplyNumber = { 2, 3, 4 };
+    [SerializeField] private bool isNumber;
+    [SerializeField] private TextMeshPro gateText;
+
+    public void Awake()
     {
-       
+        GenerateGateNumber();
     }
 
-    // Update is called once per frame
-    void Update()
+    public void GenerateGateNumber()
     {
-        
-    }
-    private void OnTriggerEnter(Collider other)
-    {
-        for (int i = 0; i < 3; i++)
+
+        if (isNumber)
         {
-            Instantiate(player, transform.position, transform.rotation);
+            int AddRandomNumber()
+            {
+                return Random.Range(0, addNumber.Length - 1);       
+            }
+            gateText.text = addNumber[AddRandomNumber()].ToString();
+        }
+
+        else if (!isNumber) 
+        {
+            int MultiplyRandomNumber()
+            {
+                return Random.Range(0, multiplyNumber.Length - 1); 
+               
+            }
+            gateText.text = "x" + multiplyNumber[MultiplyRandomNumber()].ToString();
         }
     }
 }

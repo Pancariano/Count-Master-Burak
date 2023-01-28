@@ -6,7 +6,6 @@ public class CameraFollow : MonoBehaviour
 {
     [SerializeField] private Transform target;
     [SerializeField] private float cameraFollowSpeed = 5f;
-    [SerializeField] private int cameraBorder = 1;
     private Vector3 offsetVector;
     // Start is called before the first frame update
     void Start()
@@ -15,7 +14,7 @@ public class CameraFollow : MonoBehaviour
     }
 
     // Update is called once per frame
-    void LaterUpdate()
+    void LateUpdate()
     {
         Vector3 targetToMove = target.position + offsetVector;
 
