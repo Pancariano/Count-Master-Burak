@@ -10,7 +10,6 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float horizontalSpeed = 8f;
     private int border = 4;
     private Animator anim;
-    private bool isStart;
 
     private void Awake()
     {
@@ -19,7 +18,7 @@ public class PlayerMovement : MonoBehaviour
 
     void Start()
     {
-        isStart = true;
+        
     }
 
 
@@ -30,8 +29,7 @@ public class PlayerMovement : MonoBehaviour
     }
 
     private void AnimationChanger()
-    {
-        if (isStart)
+    {      
             anim.SetBool("isStart", true);
     }
 

@@ -8,9 +8,9 @@ using System.Reflection.Emit;
 
 public class Gate : MonoBehaviour
 {
-    [SerializeField] private int[] addNumber = { 10, 20, 30, 50, 70 };
-    [SerializeField] private int[] multiplyNumber = { 2, 3, 4 };
-    [SerializeField] private bool isNumber;
+    [SerializeField] public int[] addNumber = { 10, 20, 30, 50, 70 };
+    [SerializeField] public int[] multiplyNumber = { 2, 3, 4 };
+    [SerializeField] public bool isNumber;
     [SerializeField] private TextMeshPro gateText;
 
     public void Awake()
@@ -20,24 +20,26 @@ public class Gate : MonoBehaviour
 
     public void GenerateGateNumber()
     {
-
         if (isNumber)
         {
-            int AddRandomNumber()
-            {
-                return Random.Range(0, addNumber.Length - 1);       
-            }
+            AddRandomNumber();          
             gateText.text = addNumber[AddRandomNumber()].ToString();
         }
 
         else if (!isNumber) 
         {
-            int MultiplyRandomNumber()
-            {
-                return Random.Range(0, multiplyNumber.Length - 1); 
-               
-            }
+            MultiplyRandomNumber();
             gateText.text = "x" + multiplyNumber[MultiplyRandomNumber()].ToString();
         }
+    }
+
+    public int AddRandomNumber()
+    {
+        return Random.Range(0, addNumber.Length - 1);
+    }
+
+    public int MultiplyRandomNumber()
+    {
+        return Random.Range(0, multiplyNumber.Length - 1);
     }
 }

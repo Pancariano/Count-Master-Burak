@@ -94,6 +94,7 @@
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\SimpleScript.cs" />
     <Compile Include="Assets\Scripts\RotateObstacle.cs" />
     <Compile Include="Assets\Scripts\Gate.cs" />
+    <Compile Include="Assets\Scripts\PlayerDuplicate.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
