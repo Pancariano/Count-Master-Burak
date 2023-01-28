@@ -14,11 +14,11 @@ public class PlayerDuplicate : MonoBehaviour
 
     void Start()
     {
+        player = transform;
         childNumber = transform.childCount;
         childNumberText.text = childNumber.ToString();
-
-
     }
+
     void Update()
     {
         
@@ -46,7 +46,7 @@ public class PlayerDuplicate : MonoBehaviour
                 NumberToCreateChild(childNumber * gate.addNumber[gate.AddRandomNumber()]);
             }
 
-            if (!gate.isNumber)
+            else if (!gate.isNumber)
             {
                 NumberToCreateChild(childNumber * gate.multiplyNumber[gate.MultiplyRandomNumber()]);
             }
