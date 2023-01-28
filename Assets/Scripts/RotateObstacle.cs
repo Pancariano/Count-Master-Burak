@@ -22,8 +22,5 @@ public class RotateObstacle : MonoBehaviour
     {
         transform.Rotate(0, 0, rotationSped * Time.deltaTime);
     }
-    private void OnCollisionEnter(Collision collision)
-    {
-        Destroy(collision.gameObject);
-    }
+    
 }

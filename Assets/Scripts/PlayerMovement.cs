@@ -8,7 +8,7 @@ public class PlayerMovement : MonoBehaviour
 {
     [SerializeField] private float verticalSpeed = 9f;
     [SerializeField] private float horizontalSpeed = 8f;
-    private int border = 4;
+    private readonly int border = 4;
     private Animator anim;
 
     private void Awake()
@@ -35,7 +35,11 @@ public class PlayerMovement : MonoBehaviour
 
     private void Move()
     {
-        transform.Translate(Time.deltaTime * verticalSpeed * Vector3.forward);
+        if(transform.position.z < 160)
+        {
+            transform.Translate(Time.deltaTime * verticalSpeed * Vector3.forward);
+        }
+        
 
         if (Input.GetKey(KeyCode.A) && transform.position.x > -border)
         {
@@ -47,4 +51,7 @@ public class PlayerMovement : MonoBehaviour
             transform.Translate(Time.deltaTime * horizontalSpeed * Vector3.right);
         }
     }
+
+    
+
 }

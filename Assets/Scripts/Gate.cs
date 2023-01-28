@@ -8,9 +8,9 @@ using System.Reflection.Emit;
 
 public class Gate : MonoBehaviour
 {
-    [SerializeField] public int[] addNumber = { 10, 20, 30, 50, 70 };
-    [SerializeField] public int[] multiplyNumber = { 2, 3, 4 };
-    [SerializeField] public bool isNumber;
+    public int[] addNumber = { 5, 10, 15 ,20};
+    public int[] multiplyNumber = { 2, 3 };
+    public bool isNumber;
     [SerializeField] private TextMeshPro gateText;
 
     public void Awake()
